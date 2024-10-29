@@ -1,2 +1,2 @@
 # CSU-Malicious-Package-Metadata-Dataset
-This dataset contains features engineered to predict whether a package is malicious or benign, utilizing various attributes from the package metadata.
+The dataset consists of engineered features extracted from the metadata of software packages, designed to help identify whether a package is benign or malicious. These features capture various aspects of the package, including version details, description length, license presence, repository information, and dependency structure. Together, these features provide a rich set of metadata insights that can be used for machine learning models to predict potentially malicious packages and secure software supply chains. 
