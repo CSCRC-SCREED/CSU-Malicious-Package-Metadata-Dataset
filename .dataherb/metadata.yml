@@ -1,0 +1,110 @@
+name: Malicious Package Metadata Dataset
+description: This dataset contains features engineered from NPM package metadata to predict whether a package is classified as malicious or benign. Features represent attributes such as versioning, dependencies, authorship, repository details, and scripts. The dataset provides comprehensive insights into the characteristics of NPM packages to assist in anomaly detection and classification tasks.
+contributors: [Sajal Halder, Michael Bewong, Arash Mahboubi, Yinhao Jiang, Md Rafiqul Islam, Md Zahid Islam, Ryan HL Ip, Muhammad Ejaz, Gowri Sankar, Muhammad Ali Babar, Oscar Blessed Deho]
+data:
+  - name: processed_data.csv
+    description: Contains a collection of features engineered from various fields in NPM package metadata, supporting the classification of packages as either benign or malicious.
+    path: https://github.com/CSCRC-SCREED/CSU-Malicious-Package-Metadata-Dataset
+    format: csv
+    size: 5.2MB
+    fields:
+      - name: version_major
+        description: The major component of the package version number.
+      - name: version_minor
+        description: The minor component of the package version number.
+      - name: version_patch
+        description: The patch component of the package version number.
+      - name: version_num_segments
+        description: The total number of segments in the version string, reflecting its structure.
+      - name: version_is_pre_release
+        description: A binary indicator of whether the version is a pre-release.
+      - name: version_pre_release_label
+        description: The label associated with the pre-release version, such as "alpha" or "beta."
+      - name: description_word_count
+        description: The number of words in the package description.
+      - name: description_length
+        description: The length of the package description, measured in characters.
+      - name: license_exist
+        description: A binary indicator of whether the license field is present in the metadata.
+      - name: license_length
+        description: The length of the license field, measured in characters.
+      - name: repository_exist
+        description: A binary indicator of whether the repository URL is provided in the metadata.
+      - name: funding_exist
+        description: A binary indicator of whether funding information is included in the metadata.
+      - name: exports_exist
+        description: A binary indicator of whether the exports field is defined.
+      - name: main_exist
+        description: A binary indicator of whether the package has a main entry point.
+      - name: main_file_extension
+        description: The file extension of the main entry point.
+      - name: main_path_depth
+        description: The depth of the main file in the directory structure, based on the number of nested folders.
+      - name: types_exist
+        description: A binary indicator of whether the types field is present.
+      - name: types_file_extension
+        description: The file extension of the types entry point.
+      - name: types_path_depth
+        description: The path depth of the types entry point in the directory structure.
+      - name: engines_exist
+        description: A binary indicator of whether engine requirements are specified in the metadata.
+      - name: node_version_constraint_complexity
+        description: The complexity of engine version constraints, based on the number of special characters.
+      - name: min_node_version
+        description: The minimum required Node.js version, if specified in the engine requirements.
+      - name: scripts_exist
+        description: A binary indicator of whether the package defines scripts.
+      - name: num_scripts
+        description: The total number of scripts defined in the package.
+      - name: has_test_script
+        description: A binary indicator of whether a test script is included among the package scripts.
+      - name: keywords_exist
+        description: A binary indicator of whether keywords are listed in the package metadata.
+      - name: num_keywords
+        description: The total number of keywords associated with the package.
+      - name: rare_keyword_count
+        description: The number of rare keywords used in the package, defined as keywords that appear fewer than five times across the dataset.
+      - name: num_dev_dependencies
+        description: The total number of development dependencies specified for the package.
+      - name: homepage_exist
+        description: A binary indicator of whether a homepage URL is provided.
+      - name: homepage_domain
+        description: The domain name of the homepage URL.
+      - name: homepage_type
+        description: The type of homepage, such as GitHub, Bitbucket, or a custom domain.
+      - name: _nodeVersion_exist
+        description: A binary indicator of whether the _nodeVersion field is present in the metadata.
+      - name: _nodeVersion_major
+        description: The major version component from the _nodeVersion field.
+      - name: author_type
+        description: The classification of the author as either an individual or an organization, based on naming conventions.
+      - name: author_contact_complete
+        description: A binary indicator of whether the author has provided both a name and an email address.
+      - name: author_email_domain
+        description: The domain of the email address provided by the author.
+      - name: contributors_exist
+        description: A binary indicator of whether contributors are listed in the metadata.
+      - name: num_contributors
+        description: The total number of contributors associated with the package.
+      - name: contributors_info_complete
+        description: A binary indicator of whether all contributors have complete contact information, including name, email, and URL.
+      - name: num_dependencies
+        description: The total number of dependencies listed for the package.
+      - name: version_flexibility
+        description: The number of dependencies with flexible version constraints, such as ^, ~, or *.
+      - name: maintainers_exist
+        description: A binary indicator of whether maintainers are listed in the package metadata.
+      - name: num_maintainers
+        description: The total number of maintainers associated with the package.
+      - name: repository_type
+        description: The type of repository, such as Git or SVN, as specified in the metadata.
+      - name: repository_domain
+        description: The domain of the repository URL.
+      - name: Level
+        description: The target label indicating whether the package is classified as malicious or benign.
+license:
+  - name: N/A
+    link: N/A
+references:
+  - name: N/A
+    link: N/A
